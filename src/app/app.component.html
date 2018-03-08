@@ -1,0 +1,11 @@
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+      <mat-grid-list [cols]="numOfColumn">
+        <mat-grid-tile *ngFor="let tile of randomBox(num)" [ngStyle]="{'opacity': tile.opacity}" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color" class="grid">
+          <span class="mat-body-1">{{tile.text}}</span>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>
