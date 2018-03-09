@@ -2,10 +2,15 @@
   <div class="middle">
     <div class="inner">
       <mat-grid-list [cols]="numOfColumn">
-        <mat-grid-tile *ngFor="let tile of randomBox(num)" [ngStyle]="{'opacity': tile.opacity}" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color" class="grid">
+        <mat-grid-tile *ngFor="let tile of tiles" [ngStyle]="{'opacity': tile.opacity}" [colspan]="tile.cols" [rowspan]="tile.rows"
+          [style.background]="tile.color" class="grid" (click)=checkBox(tile)>
           <span class="mat-body-1">{{tile.text}}</span>
         </mat-grid-tile>
       </mat-grid-list>
     </div>
+    <section class="mat-typography">
+      <h4 class="subheading-1">True: {{numOfTrue}}</h4>
+      <h4 class="subheading-1">False: {{numOfFalse}}</h4>
+    </section>
   </div>
 </div>
